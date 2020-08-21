@@ -1,4 +1,4 @@
-##- REQUIREMENTS - 
+## - REQUIREMENTS - 
 
 Your submission should contain exactly one file: main.cpp. You do not need to submit a design.
 
