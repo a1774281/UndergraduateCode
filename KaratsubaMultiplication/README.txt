@@ -1,4 +1,4 @@
-- REQUIREMENTS - 
+##- REQUIREMENTS - 
 
 Your submission should contain exactly one file: main.cpp. You do not need to submit a design.
 
@@ -19,7 +19,7 @@ Sample output 2: 1001 1110
 - Information for struggling students - 
 
  - Read the slides, take particular notice of the "Pseudocode" for Karatsuba Multiplication
-  1.Split a and bto obtain a1, a0, b1, and b0.`
+  1.Split a and b to obtain a1, a0, b1, and b0.`
     Do this by both splitting string a and string b in half
   2.Compute the three products
     p0=a0·b0, p1=(a1+a0)·(b1+b0), p2=a1·b1
