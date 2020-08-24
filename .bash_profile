@@ -14,6 +14,8 @@ alias home='cd ~'
 alias root='cd /'
 alias doc='cd ~/Documents'
 alias update='svn update'
+alias add='svn add'
+alias o='./a.out'
 
 #FUNCTIONS#
 
@@ -41,6 +43,7 @@ function main(){
 	touch main.cpp
 	printf "#include <iostream>\n#include <string>\n#include <stdlib.h>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n\tint answer = 0;\n\t// CODE HERE\n\n\treturn answer;\n}">>main.cpp
 	echo "main.cpp has been created in the current directory"
+	subl $PWD/main.cpp
 }
 
 function .cpp(){
@@ -50,6 +53,7 @@ function .cpp(){
 		touch $1.cpp
 		printf "#include <iostream>\n#include <string>\n#include <stdlib.h>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n\tint answer = 0;\n\t// CODE HERE\n\n\treturn answer;\n}">>$1.cpp
 		echo "$.cpp has been created in the current directory"
+		subl $PWD/$1.cpp
 	fi
 }
 
@@ -60,6 +64,7 @@ function .h(){
 		touch $1.h
 		printf "#include <iostream>\n#include <string>\n#include <stdlib.h>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass %s {\nprivate:\n\t//Variables and Methods Here!\npublic:\n\t//Or Variables and Methods Here!\n\tint METHOD(int VARIABLE) {\n\t\tint answer = 0;\n\t\t// CODE HERE\n\n\t\treturn answer;\n\t}\n};" "$1">> $1.h
 		echo "File Named $1.h has been created in the current directory"
+		subl $PWD/$1.h
 	fi
 }
 
@@ -70,12 +75,17 @@ function .hpp(){
 		touch $1.hpp
 		printf "#include <iostream>\n#include <string>\n#include <stdlib.h>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass %s {\nprivate:\n\t//Variables and Methods Here!\npublic:\n\t//Or Variables and Methods Here!\n\tint METHOD(int VARIABLE) {\n\t\tint answer = 0;\n\t\t// CODE HERE\n\n\t\treturn answer;\n\t}\n};" "$1">> $1.hpp
 		echo "File Named $1.hpp has been created in the current directory"
+		subl $PWD/$1.hpp
 	fi
 }
 
 function commit(){
 	fileparent=$(basename -- $PWD)
 	svn commit -m "$fileparent Submission"
+}
+
+function open(){
+	subl $PWD/$1
 }
 
 files=(/home/$USER/Documents/a1774281 /home/$USER/Documents/a1771235 /home/$USER/Documents/SVN/a1771235 /users/1/a1774281/Documents/SVN/a1774281 /users/5/a1771235/Documents/SVN/a1771235)
