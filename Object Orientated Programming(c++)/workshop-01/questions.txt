@@ -1,0 +1,4 @@
+As a record of file uploads, similar to commenting when coding
+Stating what and possibly why you are uploading the file/directory/etc
+As regularly as I would normally save, especially once I have finished working on a particular file and am going elsewhere to work on
+True 
