@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Color 2</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body onload="color2()">
+    <h1 id="pViewed"></h1>
+    <button type="button" onclick="color2()">Color Change YAY</button>
+    <script>
+        function color2() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) { //readyState 4 is once the request is finished and response is ready and status of 200 is "OK"
+                    document.getElementById("pViewed").style.color = this.responseText; //response text taken from the following .open() and .send()
+                    document.getElementById("pViewed").innerText = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/color.txt", true); //open(method, url, async) where method is GET or POST, url is the server file location and asynch is whether asynchronous(true) or synchronous (false) (See lecture 11)
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

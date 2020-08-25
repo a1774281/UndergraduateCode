@@ -1,0 +1,123 @@
+body {
+    background-color: ghostwhite;
+    background-image: url("rect.png"), url("rect.png"), url("rect.png");
+    background-size: 97px, 67px, 37px;
+}
+
+hr {
+    border-color: #9FEFE4;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+h2 {
+    text-align: left;
+    font-family: sans-serif;
+}
+
+h3 {
+    color: rgba(0, 0, 255, 0.8);
+}
+
+p {
+    font-family: serif;
+}
+
+a {
+    color: darkgreen;
+}
+
+del {
+    color: grey;
+}
+
+mark {
+    background-color: pink;
+    color: darkblue;
+}
+
+pre {
+    font-family: monospace;
+}
+
+.transparent-text {
+    color: rgba(0, 0, 0, 0.5)
+}
+
+.blue {
+    color: blue;
+}
+
+.fancy {
+    font-family: cursive;
+}
+
+.red-border {
+    border-style: solid;
+    border-color: red;
+}
+
+.blue-border {
+    border-style: solid;
+    border-color: blue;
+}
+
+.red-border-fixed {
+    border-style: solid;
+    border-color: red;
+    border-radius: 8px;
+    border-bottom-style: none;
+}
+
+.blue-border-fixed {
+    border-style: solid;
+    border-color: blue;
+    border-radius: 8px;
+}
+
+.red-outline {
+    outline-style: solid;
+    outline-color: red;
+}
+
+.blue1 {
+    background-color: blue;
+    border: solid red;
+    box-sizing: border-box;
+}
+
+.blue2 {
+    background-color: blue;
+    border-style: solid;
+    border-color: red;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.yellow1 {
+    background-color: yellow;
+    border: solid red;
+    text-align: right;
+    margin: 10px 20px;
+    padding: 12px;
+    height: 200px;
+    width: 700px;
+    box-sizing: border-box;
+}
+
+.yellow2 {
+    background-color: yellow;
+    border: solid red;
+    text-align: right;
+    margin: auto;
+    padding: 12px;
+    height: 400px;
+    width: 400px;
+    box-sizing: border-box;
+}
+
+#content {
+    background-color: white;
+}

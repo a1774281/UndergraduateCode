@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>log2</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body onload="log()">
+    <ul id="listid"></ul>
+
+    <script>
+        var pageReload = setInterval(log_ro, 10000);
+        var count = 0;
+
+        function log() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) { //readyState 4 is once the request is finished and response is ready and status of 200 is "OK"
+                    var array = JSON.parse(this.responseText);
+                    for (i = 0; i < array.length; i++) {
+                        var list = document.createElement("LI");
+                        list.innerText = array[i];
+                        document.getElementById("listid").appendChild(list);
+                        count++;
+                    }
+                }
+            };
+            xhttp.open("GET", "/log.json", true); //open(method, url, async) where method is GET or POST, url is the server file location and asynch is whether asynchronous(true) or synchronous (false) (See lecture 11)
+            xhttp.send();
+        }
+
+        function log_ro() {
+            var xhttp2 = new XMLHttpRequest();
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) { //readyState 4 is once the request is finished and response is ready and status of 200 is "OK"
+                    var array2 = JSON.parse(this.responseText);
+                    for (i = count; i < array2.length; i++) {
+                        var list2 = document.createElement("LI");
+                        list2.innerText = array2[i];
+                        document.getElementById("listid").appendChild(list2);
+                    }
+                }
+            };
+            xhttp2.open("GET", "/log-ro.json", true); //open(method, url, async) where method is GET or POST, url is the server file location and asynch is whether asynchronous(true) or synchronous (false) (See lecture 11)
+            xhttp2.send();
+        }
+    </script>
+</body>
+
+</html>

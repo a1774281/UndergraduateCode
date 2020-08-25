@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Index</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body onload="docLoad()">
+  <h1>My Prac 4 Express Server</h1>
+  <p id="pViewed"></p>
+  <script>
+    function docLoad() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) { //readyState 4 is once the request is finished and response is ready and status of 200 is "OK"
+          document.getElementById("pViewed").innerHTML = "This page was last viewed" + this.responseText; //response text taken from the following .open() and .send()
+        }
+      };
+      xhttp.open("GET", "/last.txt", true); //open(method, url, async) where method is GET or POST, url is the server file location and asynch is whether asynchronous(true) or synchronous (false) (See lecture 11)
+      xhttp.send();
+    }
+  </script>
+</body>
+
+</html>

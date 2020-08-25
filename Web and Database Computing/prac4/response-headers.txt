@@ -1,0 +1,15 @@
+Server: nginx/1.2.1
+Date: Mon, 06 Apr 2020 07:56:07 GMT
+Content-Type: text/html
+Content-Length: 65132
+Connection: keep-alive
+Accept-Ranges: bytes
+Cache-Control: max-age=21600
+Expires: Mon, 06 Apr 2020 13:56:07 GMT
+Vary: Accept-Encoding
+X-UA-Compatible: IE=edge
+Accept-Ranges: bytes
+X-Varnish: 1501058205
+Age: 0
+Via: 1.1 varnish
+Set-Cookie: ns-uni-www=ffffffff09ee131a45525d5f4f58455e445a4a423661;path=/;secure;httponly

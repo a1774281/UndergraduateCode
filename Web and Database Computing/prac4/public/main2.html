@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Main 2</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body onload="content()">
+    <h1 id="header">My Second Main</h1>
+    <p id="tANDc">TERMS AND CONDITIONS</p>
+    <button id="run" onclick="accept()"></button>
+    <script>
+        document.getElementById("tANDc").style.display = "none";
+        document.getElementById("run").style.display = "none";
+
+        function content() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 403) { //readyState 4 is once the request is finished and response is ready and status of 200 is "OK"
+                    document.getElementById("run").style.display = "block";
+                    document.getElementById("tANDc").style.display = "block";
+                }
+            };
+            xhttp.open("GET", "/content.ajax", true); //open(method, url, async) where method is GET or POST, url is the server file location and asynch is whether asynchronous(true) or synchronous (false) (See lecture 11)
+            xhttp.send();
+        }
+
+        function accept() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) { //readyState 4 is once the request is finished and response is ready and status of 200 is "OK"
+                    document.getElementById("run").style.display = "none";
+                    document.getElementById("tANDc").style.display = "none";
+                }
+            };
+            xhttp.open("GET", "/accept", true); //open(method, url, async) where method is GET or POST, url is the server file location and asynch is whether asynchronous(true) or synchronous (false) (See lecture 11)
+            xhttp.send();
+            newRequest();
+        }
+
+        function newRequest() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) { //readyState 4 is once the request is finished and response is ready and status of 200 is "OK"
+                    document.getElementById("header").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/content.ajax", true); //open(method, url, async) where method is GET or POST, url is the server file location and asynch is whether asynchronous(true) or synchronous (false) (See lecture 11)
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+SELECT Students.given_name, Students.family_name, Enrolments.mark FROM Students INNER JOIN Enrolments ON Students.student_id = Enrolments.student_id Where Enrolments.mark < 50 AND Enrolments.subject_code = 'COMP SCI 2000';

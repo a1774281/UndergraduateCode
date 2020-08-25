@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Practical Excercise 7 - Part 1</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+
+    <style>
+        /*body,*/
+
+        /*#vuemain {*/
+
+        /*    padding: 0;*/
+
+        /*    margin: 0;*/
+
+        /*    color: #111111;*/
+
+        /*}*/
+
+        .nightmode {
+            background-color: #111111;
+            color: #eeeeee;
+        }
+
+        div,
+        header {
+            padding: 1em;
+        }
+
+        nav .pure-menu-link {
+            color: #eeeeee;
+        }
+
+        nav .pure-menu-link:hover {
+            color: LightSlateGrey;
+        }
+
+        header,
+        footer {
+            border-bottom: 1px solid #444444;
+            background-color: LightSlateGrey;
+            color: #eeeeee;
+        }
+
+        footer {
+            border-top: 1px solid #444444;
+            background-color: LightSlateGrey;
+            color: #eeeeee;
+            text-align: center;
+            clear: both;
+        }
+
+        #ad img {
+            width: 24em;
+        }
+
+        #ad h2 {
+            text-align: center;
+        }
+
+        #stores img {
+            width: 6em;
+            float: right;
+            margin-left: 1em;
+        }
+
+        #items img {
+            width: 12em;
+            float: left;
+            margin-right: 1em;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="task1.js" defer></script>
+
+
+</head>
+
+<body>
+
+    <div v-bind:class="{ nightmode: nightmode }" id="vuemain">
+
+        <header>
+            <h1>Welcome to the WDC Store!</h1>
+            <nav class="pure-menu pure-menu-horizontal" v-on:mouseenter="topmenuhover=true" v-on:mouseleave="topmenuhover=false">
+                <ul id="topmenu" class="pure-menu-list" v-for="(option,index) in topmenu">
+                    <li class="pure-menu-item">
+                        <a v-on:mouseenter="topmenuitem=index" v-bind:href="option.url" class="pure-menu-link">{{option.title}}</a>
+                    </li>
+                </ul>
+                <div v-if="topmenuhover" class="pure-menu">
+                    <ul id="submenu" class="pure-menu-list" v-for="option in topmenu[topmenuitem].submenus">
+                        <li class="pure-menu-item">
+                            <a v-bind:href="option.url" class="pure-menu-link">{{option.title}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div v-if="showad" id="ad">
+            <button class="pure-button" style="float:right;" onclick="vueinst.showad = false;">close</button>
+            <img v-bind:src="image.url" alt="" onclick="vueinst.image=ads[Math.floor((Math.random() * 3))];" />
+            <h2>{{image.name}}</h2>
+        </div>
+
+
+
+        <div v-else id="main" class="container">
+
+            <div style="float:right; margin: 1em; border-left: 1px solid #111111;">
+
+                <h1>Vue is:</h1>
+                <p id="first">
+                    {{ text }}
+                </p>
+                <button class="pure-button" onclick="vueinst.text='Awesome!';">Try again</button>
+
+                <hr />
+
+                <span>Nightmode:</span>
+                <div class="pure-button-group" role="group" aria-label="Nightmode">
+                    <button v-bind:class="{'pure-button-active': !nightmode, 'pure-button':true}" conclick="vueinst.nightmode = false;">OFF</button>
+                    <button v-bind:class="{'pure-button-primary':nightmode, 'pure-button-active': nightmode, 'pure-button':true}" onclick="vueinst.nightmode = true;">ON</button>
+                </div>
+
+                <hr />
+
+                <div id="stores">
+
+                </div>
+
+            </div>
+
+            <div id="items">
+                <input type="text" /><button class="pure-button">Search</button>
+            </div>
+
+            <div id="comments">
+                <textarea v-model="ctext" rows="4" cols="60">Comments</textarea><button v-on:click="carr.push(ctext)" class="pure-button">Add comment</button>
+                <p v-for="comments in carr">{{comments}}</p>
+            </div>
+
+        </div>
+
+
+        <footer>
+            <p>WDC Store</p>
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>
