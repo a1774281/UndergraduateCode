@@ -8,12 +8,12 @@ Your program should output the sum of I1 and I2, using the school method, then t
 
 The results should still use base B. Please separate the results using one space.
 
-Sample input 1: 101 5 10
-Sample output 1: 106 505
-Sample input 2: 10 111 2
-Sample output 2: 1001 1110
-Sample input 3: 111 10 2
-Sample output 2: 1001 1110
+- Sample input 1: 101 5 10
+- Sample output 1: 106 505
+- Sample input 2: 10 111 2
+- Sample output 2: 1001 1110
+- Sample input 3: 111 10 2
+- Sample output 2: 1001 1110
 
 ## Information for struggling students - 
 
