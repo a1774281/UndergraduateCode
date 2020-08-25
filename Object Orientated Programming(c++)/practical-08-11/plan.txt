@@ -1,0 +1,12 @@
+Week 10 Plan: - Fix Mob EXPcalc - Add opening graphics scene - Comment Code - Ensure no memory leaks/inefficent code - Intergrate Polymorphism - Find out a way to integrate abstract classes - Possibly split main code into separate functions
+
+Week 11 Plan:
+Matthew -  - Work on testing (Unit testing and boundary testing) - Ensure correct memory allocation throughout - Organise final code (ensure readibility and efficency) 
+Jia Wei - 
+- Develop EXPgainlevel
+- Remove monster info after retreating (Additionally attempt to implement console clearing)
+- If enemy killed, enemy dies (shouldn't counter attack)
+Jennifer - 
+- fOrf UI catch
+- Total mobs killed and level displayed at death screen
+- Remove congratulations for retreat
