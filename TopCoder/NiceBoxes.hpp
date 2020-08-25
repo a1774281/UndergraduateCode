@@ -14,18 +14,14 @@ class NiceBoxes
             int answer = 0;
             while (b >= c){
             	answer++;
-            	// cout << "answer: "<< answer << endl;
             	b--;
-            	// cout << "b: "<< b << endl;
 	            if (b == 0){
 	            	return -1;
 	            }
             }
             while (a >= b) {
             	answer++;
-            	// cout << "answer: "<< answer << endl;
             	a--;
-            	// cout << "a: "<< b << endl;
 				if (a == 0){
 	            	return -1;
 	            }
