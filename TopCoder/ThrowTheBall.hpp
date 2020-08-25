@@ -8,7 +8,7 @@ class ThrowTheBall
         int result = 0;
         int passcount = 1;
         int P[50] = {0};
-        for (int i=0; i<20; i++){
+        for (int i=0; i<20; i++){  // PENIS
             while (P[i] == M-1){
              result++;
              return result;
