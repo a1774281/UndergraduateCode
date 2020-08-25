@@ -1,0 +1,29 @@
+#ifndef UNIT_H
+#define UNIT_H
+#include <string>
+using namespace std;
+class Unit
+{
+public:
+    void setName(string);
+    void setArea(string);
+    void setLevel(int);
+    void setEXP();
+    void setHealth(double);
+    string getName();
+    string getArea();
+    int getLevel();
+    double getHealth();
+    double getMaxHealth();
+    int getDamage();
+    int getEXP();
+protected:
+    string mobName;
+    string mobArea;
+    int mobLevel;
+    int mobDamage;
+    double mobHealth;
+    double mobMaxHealth;
+    int EXP;
+};
+#endif
